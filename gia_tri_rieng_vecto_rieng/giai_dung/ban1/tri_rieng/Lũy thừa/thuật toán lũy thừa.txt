@@ -1,0 +1,60 @@
+Input: Ma trận A, sai số e
+
+Bước 1: Trường hợp 1 trị riêng trội
++	k = 0
++	v(k) = [1  1  ...  1]T (ma trận cột)
++	Av = A*v; k++
++	Chuẩn hóa vecto: v(k) = Ax/max(Ax)
++	while (max(abs(v(k) - v(k-1))) > e) do {
+		Av = A*v
+		k++
+		v(k) = Av/max(Av)
+		lamda(k) = <Av,v>/<v,v>
+		if (k > 50) then end while
+	}
+	if (abs(lamda(k) - lamda(k-1)) > e) next to Bước 2
+	else print lamda and v(k) and exit
+
+Bước 2: Trường hợp 2 trị riêng trội thực
++	k = 0
++	v(k) = [1  1  ...  1]T (ma trận cột)
++	k++; Av(k) = A*v(k-1)
++	Chuẩn hóa vecto: v(k) = Av/max(Av)
++	do {
+		Av(k) = A*Av(k-1)
+		v(k) = Av/max(Av)
+		lamdabinhphuong(k) = Av[i](k)/Av[i](k-2)
+		k++
+		if (k > 50) end while
+	} while (max(abs(v(k-1) - v(k-2))) > e)
+	if (abs(lamdabinhphuong(k-1) - lamdabinhphuong(k-3) > e) next to Bước 3
+	else {
+		Av(k) = Av(k)/pow(sqrt(lamdabinhphuong(k)), k)
+		Av(k-1) = Av(k-1)/pow(sqrt(lamdabinhphuong(k-1)), k-1)
+		lamda1 = sqrt(lamdabinhphuong(k-1))
+		lamda2 = -sqrt(lamdabinhphuong(k-1))
+		x1 = (Av(k-1) + Av(k-2))/2
+		x2 = (Av(k-1) - Av(k-2))/2
+	}
+
+Bước 3: Trường hợp 2 trị riêng trội phức
++	k = 0;
++	v(k) = [1  1  ...  1]T
++	k++
++	Av(k) = A*v(k-1)
++	Chuẩn hóa vecto: v(k) = Av/max(Av)
++	count = 1
++	do {
+		k++
+		Av(k) = A*v(k-1)
+		k++
+		Av(k) = A*Av(k-1)
+		k++
+		Av(k) = A*Av(k-1)
+		v(k) = Av(k)/max(Av(k))
+		find lamda(count)
+		count++
+		if (k > 50) then end while
+	} while (abs(lamda(count-1).img - lamda(count(i-2).img) > e)
+	if (abs(lamda(count-1).img - lamda(count(i-2).img) > e) return
+	else print lamda

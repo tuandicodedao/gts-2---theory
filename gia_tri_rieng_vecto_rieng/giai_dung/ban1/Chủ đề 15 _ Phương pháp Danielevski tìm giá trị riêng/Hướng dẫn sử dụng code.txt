@@ -1,0 +1,14 @@
+Nhóm 19
+Chủ đề: PHƯƠNG PHÁP DANILEVSKI TÌM VECTOR RIÊNG VÀ TRỊ RIÊNG
+
+## Input, output chương trình
+- Input: Ma trận 2 chiều 
+- Output: Danh sách trị riêng và vector riêng tương ứng, kiểm thử kết quả
+
+## Hướng dẫn sử dụng
+* Yêu cầu cài sẵn thư viện numpy để chạy được
+* Tạo file với đuôi file `*.txt`
+* Nhập ma trận (*ma trận vuông) vào file từng hàng một, mỗi phần tử cách nhau 1 dấu cách, hết hàng này thì xuống dòng nhập hàng tiếp theo
+
+- Đưa đường dẫn file chứa ma trận 2 chiều cần xét vào hàm readMatrix bên trong hàm main
+- Chạy chương trình
